@@ -15,7 +15,7 @@
     # Like Janus, but with more Magic.
     # The ultimate dotfiles distribution.
 
-      sh -c "`curl -fsSL https://raw.github.com/hunterboerner/magus/magus/install.sh`"
+      sh -c "`curl -fsSL https://raw.github.com/bboerner/magus/magus/install.sh`"
 
 
 
