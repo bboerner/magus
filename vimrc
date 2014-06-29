@@ -33,13 +33,13 @@ set autoread                    "Reload files changed outside vim
 set hidden
 
 "turn on syntax highlighting
-syntax on
+"syntax on
 
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
 " The mapleader has to be set before NeoBundle starts loading all 
 " the plugins.
-let mapleader=","
+"let mapleader=","
 
 " =============== NeoBundle Initialization ===============
 " This loads all the plugins specified in ~/.vim/bundles.vim
@@ -81,9 +81,9 @@ set linebreak    "Wrap lines at convenient points
 
 " ================ Folds ============================
 
-set foldmethod=indent   "fold based on indent
-set foldnestmax=3       "deepest fold is 3 levels
-set nofoldenable        "dont fold by default
+"set foldmethod=indent   "fold based on indent
+"set foldnestmax=3       "deepest fold is 3 levels
+"set nofoldenable        "dont fold by default
 
 " ================ Completion =======================
 
