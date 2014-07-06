@@ -124,6 +124,7 @@
 
 [branch]
     autosetupmerge = true
+    autosetuprebase = always
 
 [push]
     # 'git push' will push the current branch to its tracking branch
@@ -134,6 +135,7 @@
     autocrlf = false
     editor = vim
     excludesfile = ~/.gitignore
+    filemode = false
 
 [advice]
 #    whitespace = nowarn
