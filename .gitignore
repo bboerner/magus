@@ -12,3 +12,5 @@ vim/bundle
 .netrwhist
 bin/subl
 tags
+
+comments
