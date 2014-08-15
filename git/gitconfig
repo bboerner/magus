@@ -4,7 +4,25 @@
 # See the README for examples.
 #
 ################################################################################
-#
+
+[hub]
+    protocol = https
+
+[github]
+	user = bboerner
+
+[user]
+    name = Brendan Boerner
+    email = bboerner.foss@gmail.com
+
+[ghi]
+	token = 765e2fe91447aa072c3d9d0b39e366d0dd035dd6
+
+[credential]
+    #helper = osxkeychain
+    #helper = cache
+	helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+
 [color]
     diff = auto
     status = auto
@@ -103,21 +121,26 @@
 [format]
     pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 
-[mergetool]
-    prompt = false
-    keepBackup = false
+[diff]
+    # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
+    # instead of a/b/c/d as prefixes for patches
+    mnemonicprefix = true
 
 [difftool]
     prompt = false
 
-[mergetool "mvimdiff"]
-    cmd="mvim -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
-    keepbackup=false
-
 [merge]
     summary = true
     verbosity = 1
-    tool = mvimdiff
+    tool = gvimdiff
+
+[mergetool]
+    prompt = false
+    keepBackup = false
+
+[mergetool "gvimdiff"]
+    cmd="gvimdiff -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
+    keepbackup=false
 
 [apply]
     whitespace = nowarn
@@ -126,25 +149,26 @@
     autosetupmerge = true
     autosetuprebase = never
 
-[push]
-    # 'git push' will push the current branch to its tracking branch
-    # the usual default is to push all branches
-    default = tracking
-
 [core]
     autocrlf = false
     editor = vim
     excludesfile = ~/.gitignore
     filemode = false
 
+[push]
+    # See `git help config` (search for push.default)
+    # for more information on different options of the below setting.
+    #
+    # Setting to git 2.0 default to surpress warning message
+    #default = simple
+
+    # 'git push' will push the current branch to its tracking branch
+    # the usual default is to push all branches
+    default = tracking
+
 [advice]
 #    whitespace = nowarn
     statusHints = true
-
-[diff]
-    # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
-    # instead of a/b/c/d as prefixes for patches
-    mnemonicprefix = true
 
 [rerere]
     # Remember my merges
@@ -154,27 +178,6 @@
 [include]
     path = .gitconfig.user
 
-[credential]
-#    helper = osxkeychain
-#    helper = cache
-	helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
-
 [help]
     autocorrect = 1
 
-[user]
-    name = Brendan Boerner
-    email = bboerner.foss@gmail.com
-
-[github]
-	user = bboerner
-
-[ghi]
-	token = 765e2fe91447aa072c3d9d0b39e366d0dd035dd6
-
-[push]
-    # See `git help config` (search for push.default)
-    # for more information on different options of the below setting.
-    #
-    # Setting to git 2.0 default to surpress warning message
-    default = simple
